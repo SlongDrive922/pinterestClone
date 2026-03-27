@@ -1,0 +1,1134 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    /*why top, padding-top or margin-top */
+    top: 0;
+    background-color: #ffff;
+    z-index: 1000;
+}
+
+.hamburger {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.logo h2 {
+    color: #e60023;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.search-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.explore-btn {
+    background-color: black;
+    color: #ffff;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box i{
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+}
+
+.search-box input{
+   padding: 10px 15px 10px 35px;
+   width: 250px;
+   border-radius: 20px;
+   border: none;
+   background-color: #f1f1f1;
+}
+
+.nav-links ul{
+    display: flex;
+     text-decoration: none;
+    list-style:none;
+    
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: #000;
+     text-decoration: none;
+     padding: 10px 15px;
+     border-radius: 20px;
+     transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #efefef;
+}
+
+.auth-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.login {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #660033;
+    color: #ffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.signup {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ebebeb;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+/* Hero */
+
+.hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.hero-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://images.pexels.com/photos/36491955/pexels-photo-36491955.jpeg) center/cover no-repeat;
+    /* text-align: center; */
+    filter: blur(3px);
+    transform: scale(1.1);
+}
+
+.hero-content {
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+}
+
+.hero-span {
+    color:#660033;
+}
+
+
+/* gallery */
+
+.gallery h1 {
+     display: block;
+     text-align: center;
+     margin: 40px 0;
+     color:#c82142;
+     font-size: 52px;
+     letter-spacing: 1px;
+}
+
+.pin-container {
+    column-count: 4;
+    column-gap: 15px;
+    padding: 20px 40px;
+}
+
+.pin {
+    margin-bottom: 15px;
+    break-inside: avoid;
+    transition: 0.3s;
+}
+
+.pin img {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.pin img:hover {
+    transform: scale(1.03);
+}
+
+/* idea section */
+.idea-text {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.idea-text h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.idea-text p{
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* feature section */
+.feature-section {
+    padding: 80px 10%;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.feature.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature img {
+    width: 45%;
+    border-radius: 15px;
+    /* background-color: #555; */
+}
+
+.feature-text h3 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.feature-text p {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+
+.feature-text button {
+    background-color:#c82142;
+    border:none;
+    color:#ffff;  
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;  
+}
+
+button:hover {
+    background-color:#660033;
+}
+
+/* ========== BACKGROUND GRID WITH MASONRY STYLE ========== */
+.multi-image-bg {
+  position: absolute;
+  inset: 24px;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  background-color: #1a1a1e;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+/* NEW: Proper CSS Grid with fixed rows and masonry feel */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 160px;  /* Fixed row height */
+  gap: 8px;
+  background-color: #c6c6ce;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* All images fill their cells completely */
+.grid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensures images fill area without distortion */
+  filter: brightness(0.5) contrast(1.1);
+  transition: all 0.2s ease;
+  border-radius: 12px;
+}
+
+/* Pinterest-style masonry: some images span 2 rows (taller) */
+.tall {
+  grid-row: span 2;
+}
+
+/* Optional: some images can span 2 columns for variety */
+.wide {
+  grid-column: span 2;
+}
+
+/* Dark overlay on top of grid */
+.dark-overlay {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  background: rgba(0, 0, 0, 0.5px);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 28px;
+}
+
+/* ========== MAIN CONTAINER ========== */
+.main-container {
+  position: relative;
+  z-index: 10;
+  inset: 0;  /* Top, right, bottom, left all 0 */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 40px 60px;
+  gap: 40px;
+}
+
+/* ========== LEFT SIDE WITH CENTERED HEADING OVERLAY ========== */
+.left-panel {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+/* Heading overlay that sits on top of the grid */
+.heading-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  pointer-events: none;  /* Allows clicking through to grid if needed */
+  z-index: 5;
+}
+
+.heading-overlay h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.heading-overlay p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.signup-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #555;
+}
+
+/* ========== SIGNUP CARD (RIGHT SIDE) ========== */
+.signup-card {
+  flex: 0 1 auto;
+  max-width: 360px;
+  width: 100%;
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.35);
+  padding: 24px 24px 28px;
+  margin: 0;
+  transition: transform 0.2s ease;
+  position: relative;
+  z-index: 15;
+}
+
+.signup-card h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0;
+  color: #111;
+}
+
+.signup-card p {
+    text-align: center;
+    margin-bottom: 18px;
+}
+.input-group {
+  margin-bottom: 14px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #2c2c2e;
+  margin-bottom: 4px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  border: 1px solid #cdcdd4;
+  border-radius: 24px;
+  background-color: #fff;
+  transition: 0.2s;
+  font-family: inherit;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #e60023;
+  box-shadow: 0 0 0 2px rgba(230, 0, 35, 0.2);
+}
+
+.hint-text {
+  font-size: 0.65rem;
+  color: #76767a;
+  margin-top: 4px;
+  margin-left: 12px;
+}
+
+.password-tips {
+  font-size: 0.65rem;
+  color: #e60023;
+  background: #fff0f2;
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 0;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.birthdate-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.birthdate-row input {
+  flex: 1;
+  padding: 10px 8px;
+  border-radius: 24px;
+  border: 1px solid #cdcdd4;
+  font-family: inherit;
+  text-align: center;
+}
+
+.birthdate-row input:focus {
+  border-color: #e60023;
+  outline: none;
+}
+
+.continue-btn {
+  width: 100%;
+  background-color: #e60023;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 14px 0 12px;
+  transition: background 0.2s ease;
+  font-family: inherit;
+}
+
+.continue-btn:hover {
+  background-color: #b1001b;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #6b6b70;
+  font-size: 0.7rem;
+  margin: 10px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e2e2e6;
+}
+
+.divider span {
+  margin: 0 12px;
+  font-weight: 500;
+}
+
+.google-btn {
+  width: 100%;
+  background: white;
+  border: 1px solid #c6c6ce;
+  border-radius: 40px;
+  padding: 9px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+  color: #1f1f23;
+}
+
+.google-btn:hover {
+  background-color: #f8f8fa;
+  border-color: #adadbb;
+}
+
+.google-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.terms {
+  font-size: 0.65rem;
+  color: #6b6b70;
+  text-align: center;
+  margin: 16px 0 12px;
+  line-height: 1.3;
+}
+
+.terms a {
+  color: #111;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid #efeff2;
+  font-size: 0.8rem;
+}
+
+.login-link a, .business-link a {
+  color: #e60023;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.business-link {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 0.8rem;
+}
+
+.login-link a:hover, .business-link a:hover {
+  text-decoration: underline;
+}
+
+
+/* ====== footer section ========= */
+.footer {
+    background-color: black;
+    padding: 40x 80px;
+    display: flex;
+    color: whitesmoke;
+    justify-content: space-between;
+}
+
+.footer h3{
+    inset: 0;
+    font-size: 42px;
+    margin: 40px;
+}
+
+.footer-column {
+    width: 16%;
+}
+
+.footer-column h4 {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+    margin:20px;
+}
+
+.footer-column li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #ffff;
+    cursor: pointer;
+}
+
+.footer-column li:hover {
+    text-decoration: underline;
+}
+
+.hamburger {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width:1024px) {
+
+    /*Nvbar adjustments */
+    .navbar {
+        padding: 12px 20px;
+    }
+
+    .search-box input {
+        width: 180px;
+    }
+
+    .nav-links a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    /* Hero section */
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    /* Gallery */
+    .gallery h1 {
+        font-size: 40px;
+        margin: 30px 0;
+    }
+
+    .pin-container {
+        column-count: 3;
+        padding: 20px 30px;
+    }
+
+    /* feature section */
+    .feature-section {
+        font-size: 28px;
+    }
+
+    .feature-text p {
+        font-size: 14px;
+    }
+
+    /* Signup section*/
+    .heading-overlay h1 {
+        font-size: 3rem;
+    }
+
+    .main-container {
+        padding: 40px 40px;
+    }
+
+   /*Footer */
+   .footer {
+    padding: 40px 40px;
+    flex-wrap: wrap;
+    gap: 30px;
+   }
+
+   .footer h3 {
+    font-size: 32px;
+    margin: 20px;
+   }
+
+   .footer-column {
+    width: 30%;
+   }
+
+   /* Tablet Portrait (768px - 960px)*/
+   @media (max-width: 900px) {
+     .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 999;
+     }
+
+     .nav-links.active {
+        display: block;
+     }
+
+     .nav-links ul {
+        flex-direction: column;
+        padding: 20px;
+     }
+
+     .nav-links li {
+        margin: 10px 0;
+     }
+
+     .nav-links a {
+        display: block;
+        padding: 12px 20px;
+     }
+
+     .auth-btn {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: white;
+        padding: 15px;
+        border-radius: 0 4px 6px rgba(0,0,0,0.1);
+        flex-direction: column;
+        gap: 10px;
+        z-index: 999;
+     }
+   }
+
+  .auth-btn.active {
+        display: flex;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    /* Adjust search section for tablet */
+    .search-section {
+        flex: 1;
+        margin: 0 15px;
+    }
+    
+    .search-box input {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    /* Hero section tablet */
+    .hero {
+        height: 60vh;
+    }
+    
+    .hero-content h1 {
+        font-size: 36px;
+        padding: 0 20px;
+    }
+    
+    /* Gallery tablet */
+    .pin-container {
+        column-count: 2;
+        padding: 20px;
+    }
+    
+    .gallery h1 {
+        font-size: 32px;
+    }
+    
+    /* Idea text tablet */
+    .idea-text {
+        padding: 50px 20px;
+    }
+    
+    .idea-text h1 {
+        font-size: 32px;
+    }
+    
+    .idea-text p {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    
+    /* Feature section tablet */
+    .feature {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    .feature.reverse {
+        flex-direction: column;
+    }
+    
+    .feature img {
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .feature-text {
+        padding: 20px;
+    }
+    
+    .feature-text h3 {
+        font-size: 26px;
+    }
+    
+    /* Signup section tablet */
+    .signup-section {
+        height: auto;
+        min-height: 100vh;
+        overflow: auto;
+    }
+    
+    .multi-image-bg {
+        position: absolute;
+        inset: 0;
+        border-radius: 0;
+    }
+    
+    .image-grid {
+        grid-auto-rows: 140px;
+    }
+    
+    .dark-overlay {
+        inset: 0;
+        border-radius: 0;
+    }
+    
+    .main-container {
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 20px;
+        gap: 30px;
+        position: relative;
+        min-height: 100vh;
+    }
+    
+    .left-panel {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .heading-overlay {
+        position: relative;
+        padding: 20px;
+    }
+    
+    .heading-overlay h1 {
+        font-size: 2.5rem;
+    }
+    
+    .signup-card {
+        max-width: 450px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 20;
+    }
+}
+
+/* Mobile Styles (480px - 767px) */
+@media (max-width: 767px) {
+    /* Navbar mobile */
+    .navbar {
+        padding: 10px 15px;
+    }
+    
+    .logo h2 {
+        font-size: 18px;
+    }
+    
+    .search-section {
+        gap: 8px;
+    }
+    
+    .explore-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+    
+    .search-box input {
+        padding: 8px 12px 8px 32px;
+        width: 140px;
+        font-size: 12px;
+    }
+    
+    .search-box i {
+        left: 10px;
+        font-size: 12px;
+    }
+    
+    /* Hero mobile */
+    .hero {
+        height: 50vh;
+    }
+    
+    .hero-content h1 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+    
+    /* Gallery mobile */
+    .gallery h1 {
+        font-size: 28px;
+        margin: 20px 0;
+    }
+    
+    .pin-container {
+        column-count: 1;
+        padding: 15px;
+        column-gap: 0;
+    }
+    
+    .pin {
+        margin-bottom: 15px;
+    }
+    
+    .pin img {
+        border-radius: 12px;
+    }
+    
+    /* Idea text mobile */
+    .idea-text {
+        padding: 40px 15px;
+    }
+    
+    .idea-text h1 {
+        font-size: 24px;
+    }
+    
+    .idea-text p {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    
+    /* Feature section mobile */
+    .feature-section {
+        padding: 40px 20px;
+    }
+    
+    .feature {
+        margin-bottom: 40px;
+    }
+    
+    .feature img {
+        width: 100%;
+        border-radius: 12px;
+    }
+    
+    .feature-text h3 {
+        font-size: 22px;
+    }
+    
+    .feature-text p {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+    
+    .feature-text button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    /* Signup section mobile */
+    .signup-section {
+        min-height: 100vh;
+    }
+    
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 100px;
+        gap: 6px;
+    }
+    
+    .grid-img {
+        border-radius: 8px;
+    }
+    
+    .heading-overlay h1 {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+    
+    .heading-overlay p {
+        font-size: 1rem;
+    }
+    
+    .signup-card {
+        max-width: 95%;
+        padding: 20px 18px 24px;
+        border-radius: 20px;
+    }
+    
+    .signup-card h2 {
+        font-size: 1.2rem;
+    }
+    
+    .signup-card p {
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+    }
+    
+    .input-group input {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .birthdate-row input {
+        padding: 8px 6px;
+    }
+    
+    .continue-btn, .google-btn {
+        padding: 8px 0;
+        font-size: 0.85rem;
+    }
+    
+    .terms {
+        font-size: 0.6rem;
+    }
+    
+    /* Footer mobile */
+    .footer {
+        flex-direction: column;
+        padding: 30px 20px;
+        text-align: center;
+    }
+    
+    .footer h3 {
+        font-size: 28px;
+        margin: 0 0 20px 0;
+        text-align: center;
+    }
+    
+    .footer-column {
+        width: 100%;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    
+    .footer-column h4 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    
+    .footer-column ul {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .footer-column li {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+}
+
+/* Small Mobile (320px - 479px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 8px 12px;
+    }
+    
+    .logo h2 {
+        font-size: 16px;
+    }
+    
+    .search-box input {
+        width: 110px;
+        font-size: 11px;
+    }
+    
+    .explore-btn {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+    
+    .hero-content h1 {
+        font-size: 24px;
+    }
+    
+    .gallery h1 {
+        font-size: 24px;
+    }
+    
+    .idea-text h1 {
+        font-size: 22px;
+    }
+    
+    .feature-text h3 {
+        font-size: 20px;
+    }
+    
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 120px;
+    }
+    
+    .heading-overlay h1 {
+        font-size: 1.5rem;
+    }
+    
+    .signup-card {
+        padding: 18px 15px 20px;
+    }
+    
+    .footer h3 {
+        font-size: 24px;
+    }
+}
+
+/* Fix for landscape orientation on mobile */
+@media (max-width: 900px) and (orientation: landscape) {
+    .hero {
+        height: 80vh;
+    }
+    
+    .signup-section {
+        min-height: auto;
+        height: auto;
+    }
+    
+    .image-grid {
+        grid-auto-rows: 120px;
+    }
+    
+    .signup-card {
+        max-width: 500px;
+    }
+}
